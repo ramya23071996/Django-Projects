@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card mx-auto" style="width: 22rem;">
+    <img src="{% static image %}" class="card-img-top" alt="{{ name }}">
+    <div class="card-body text-center">
+        <h5 class="card-title">{{ name }}</h5>
+        <p class="card-text">{{ title }}</p>
+        <a href="mailto:{{ email }}" class="btn btn-primary">Email</a>
+        <a href="{{ linkedin }}" class="btn btn-outline-info">LinkedIn</a>
+        <a href="{{ github }}" class="btn btn-outline-dark">GitHub</a>
+    </div>
+</div>
+{% endblock %}

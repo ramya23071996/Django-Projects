@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>About Me</h1>
+<p>I specialize in Flask, Django, encryption, and building polished SaaS tools.</p>
+<h2>Skills</h2>
+<ul>
+    {% for skill in skills %}
+        {% if skill == "Django" %}
+            <li><strong>{{ skill }}</strong> — My favorite framework!</li>
+        {% else %}
+            <li>{{ skill }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}
