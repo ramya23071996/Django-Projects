@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subscribe (Manual)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Newsletter Signup (Manual Form)</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table>{{ form.as_table }}</table>
+        <button type="submit" class="btn btn-success">Subscribe</button>
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info mt-3">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+</div>
+</body>
+</html>
