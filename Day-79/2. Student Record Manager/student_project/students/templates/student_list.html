@@ -1,0 +1,11 @@
+<h1>Student List</h1>
+<a href="{% url 'student_create' %}">Add New Student</a>
+<ul>
+  {% for student in students %}
+    <li>
+      <a href="{% url 'student_detail' student.pk %}">{{ student.name }}</a>
+      - Roll No: {{ student.roll_no }}
+      {% if student.is_active %}(Active){% else %}(Inactive){% endif %}
+    </li>
+  {% endfor %}
+</ul>
