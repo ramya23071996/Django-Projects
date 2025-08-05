@@ -1,0 +1,9 @@
+{% extends 'resume_app/base.html' %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit Resume</button>
+</form>
+<a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3">View Dashboard</a>
+{% endblock %}

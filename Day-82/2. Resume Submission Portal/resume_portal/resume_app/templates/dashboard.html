@@ -1,0 +1,23 @@
+{% extends 'resume_app/base.html' %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Resume</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for resume in resumes %}
+        <tr>
+            <td>{{ resume.name }}</td>
+            <td>{{ resume.email }}</td>
+            <td>{{ resume.position }}</td>
+            <td><a href="{{ resume.resume_file.url }}" target="_blank">Download</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

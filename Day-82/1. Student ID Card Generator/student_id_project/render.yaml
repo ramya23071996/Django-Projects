@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: student-id-generator
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn student_id_project.wsgi
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: student_id_project.settings
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: DEBUG
+        value: False
